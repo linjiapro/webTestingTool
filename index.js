@@ -18,12 +18,6 @@ app.get('/500error', function(req, res) {
   res.send("500 error");
 });
 
-app.get('/timeout', function(req, res) {
-	setTimeout(function(){
-		res.json({success: "timeout"});
-	}, 1000*60*5)
-});
-
 app.get('/', function(req, res) {
 	res.json({success: "app is running"});
 });
