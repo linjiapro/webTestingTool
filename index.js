@@ -12,9 +12,16 @@ app.set('view engine', 'ejs');
 app.get('/200json', function(req, res) {
 	res.json({success: "200 json api"});
 });
+
 app.get('/500error', function(req, res) {
   res.status(500);
   res.send("500 error");
+});
+
+app.get('/timeout', function(req, res) {
+	setTimeout(1000*60*5, function(){
+		res.json({success: "timeout"});
+	})
 });
 
 app.get('/', function(req, res) {
