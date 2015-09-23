@@ -19,9 +19,9 @@ app.get('/500error', function(req, res) {
 });
 
 app.get('/timeout', function(req, res) {
-	setTimeout(1000*60*5, function(){
+	setTimeout(function(){
 		res.json({success: "timeout"});
-	})
+	}, 1000*60*5)
 });
 
 app.get('/', function(req, res) {
